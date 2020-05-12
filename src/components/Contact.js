@@ -89,7 +89,7 @@ export default function Contact() {
       <FormContainer>
         <form
           name="contact"
-          method="POST"
+          method="post"
           data-netlify="true"
           data-netlify="bot-field"
         >
