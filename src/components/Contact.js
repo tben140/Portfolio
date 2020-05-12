@@ -91,32 +91,25 @@ export default function Contact() {
           name="contact"
           method="post"
           data-netlify="true"
-          data-netlify="bot-field"
+          data-netlify-honeypot="bot-field"
         >
-          <p>
-            <Label>
-              Name:
-              <br />
-              <Input type="text" name="name" placeholder="Name..." />
-            </Label>
-          </p>
+          <Label>
+            Name:
+            <br />
+            <Input type="text" name="name" placeholder="Name..." />
+          </Label>
           <br />
-          <p></p>
-          <p>
-            <Label>
-              Email:
-              <br />
-              <Input type="email" name="email" placeholder="Email..." />
-            </Label>
-          </p>
+          <Label>
+            Email:
+            <br />
+            <Input type="email" name="email" placeholder="Email..." />
+          </Label>
           <br />
-          <p>
-            <Label>
-              Message:
-              <br />
-              <TextArea name="message" placeholder="Message..."></TextArea>
-            </Label>
-          </p>
+          <Label>
+            Message:
+            <br />
+            <TextArea name="message" placeholder="Message..."></TextArea>
+          </Label>
           <Submit>Send</Submit>
         </form>
       </FormContainer>
