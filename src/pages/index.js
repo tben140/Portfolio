@@ -1,30 +1,72 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Header from "../components/Header"
+import AboutMe from "../components/AboutMe"
+import Projects from "../components/Projects"
+import Skills from "../components/Skills"
+import SocialMedia from "../components/SocialMedia"
+import Contact from "../components/Contact"
+
+import { createGlobalStyle } from "styled-components"
+import styled from "styled-components"
+
+import FiraCode from "../assets/fonts/FiraCode-VariableFont_wght.ttf"
+
+const GlobalStyle = createGlobalStyle`
+  ::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: none;
+    border-radius: 8px;
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #b499c6; 
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3b6ea3;
+  }
+  body {
+    @font-face {
+    font-family: FiraCode;
+    src: url(${FiraCode}) format("truetype");
+    }
+    font-family: FiraCode;
+    background-color: #1A1B26;
+    color: #fff;
+    line-height: 1.2em;
+    margin: 0 auto;
+    overflow: overlay
+  }
+  
+`
+
+const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+`
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Skills</h1>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>Node.js</li>
-      <li>Express</li>
-      <li>React.js</li>
-      <li>React Native</li>
-      <li>PostgreSQL</li>
-      <li>MongoDB</li>
-      <li>Jest</li>
-      <li>Mocha</li>
-      <li>Chai</li>
-    </ul>
-    <h1>Projects</h1>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  <>
+    <GlobalStyle />
+    <Layout>
+      <SEO title="Home" />
+      <Header />
+      <FlexContainer>
+        <AboutMe />
+        <Contact />
+        <SocialMedia />
+        <Skills />
+        <Projects />
+      </FlexContainer>
+    </Layout>
+  </>
 )
 
 export default IndexPage

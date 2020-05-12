@@ -1,50 +1,55 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle, description }) => (
-  <header
-    style={{
-      background: `orangered`,
-      marginBottom: `0rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `0.02rem 0rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-      <h2
-        style={{
-          color: `white`,
-          textDecoration: `none`,
-        }}
-      >
-        {description}
-      </h2>
-    </div>
-  </header>
-)
+import styled from "styled-components"
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+import BackgroundVideo from "../assets/video/headervideo.mp4"
+
+const Headertag = styled.header`
+  margin-bottom: 0rem;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow: hidden;
+  box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.5);
+`
+
+const SiteTitle = styled.h1`
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1.2em;
+  color: white;
+  text-shadow: 2px 2px 5px #000;
+  margin: 0;
+  text-align: center;
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+const HeaderVideo = styled.video`
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 3;
+  object-fit: cover;
+  z-index: -1;
+  transform: scale(1.04);
+  filter: blur(5px);
+`
+
+export default function Header() {
+  return (
+    <Headertag>
+      <HeaderVideo autoPlay="true" muted="true" loop="true">
+        <source src={BackgroundVideo} type="video/mp4" />
+      </HeaderVideo>
+      <SiteTitle>
+        Ben Taylor
+        <br />
+        Full Stack Web Developer
+      </SiteTitle>
+    </Headertag>
+  )
 }
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
