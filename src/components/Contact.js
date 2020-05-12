@@ -87,12 +87,17 @@ export default function Contact() {
       <Heading>Contact</Heading>
       <br />
       <FormContainer>
-        <form name="contact" method="POST" data-netlify="true">
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          data-netlify="bot-field"
+        >
           <p>
             <Label>
               Name:
               <br />
-              <Input type="name" name="name" placeholder="Name..." />
+              <Input type="text" name="name" placeholder="Name..." />
             </Label>
           </p>
           <br />
