@@ -4,23 +4,33 @@ import styled from "styled-components"
 
 import FiraCode from "../assets/fonts/FiraCode-VariableFont_wght.ttf"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons"
+
 import Heading from "./Heading.js"
 
 const Container = styled.div`
   background-color: #ef9323;
   color: #1a1b26;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   margin-bottom: 5px;
   margin-right: 5px;
   padding-left: 20px;
   padding-right: 20px;
   order: 2;
-  flex-grow: 1;
-  min-width: 400px;
+  /* width: 509px; */
+  flex: 1 1 340px;
+  @media (max-width: 1139px) {
+    margin-right: 0px;
+  }
+  @media (max-width: 440px) {
+    padding: 0px;
+    width: 100%;
+  }
 `
 
 const FormContainer = styled.div`
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
 `
 
@@ -38,12 +48,19 @@ const Input = styled.input`
   background-color: #1a1b26;
   color: #fff;
   padding: 10px 10px;
+  margin-bottom: 10px;
   border: 0px solid #fff;
   border-radius: 5px;
   box-sizing: border-box;
   &:focus {
     outline: none;
     border: 3px solid #3b6ea3;
+  }
+  @media (max-width: 440px) {
+    /* width: 440px; */
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 100%;
   }
 `
 
@@ -56,6 +73,7 @@ const TextArea = styled.textarea`
   color: #fff;
   resize: none;
   padding: 10px 10px;
+  margin-bottom: 10px;
   border: 0px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
@@ -63,15 +81,23 @@ const TextArea = styled.textarea`
     outline: none;
     border: 3px solid #3b6ea3;
   }
+  @media (max-width: 440px) {
+    /* width: 440px; */
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 100%;
+  }
 `
 
 const Submit = styled.button`
   type: "submit";
   width: 99%;
+  font-size: 1.2em;
   background-color: #3b6ea3;
   color: white;
   padding: 14px 20px;
-  margin: 8px 0;
+  /* margin: 8px 0; */
+  margin-bottom: 10px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -79,6 +105,15 @@ const Submit = styled.button`
   &:hover {
     background-color: #5cacff;
   }
+  @media (max-width: 440px) {
+    font-size: 1.4em;
+    width: 100%;
+  }
+`
+
+const Form = styled.form`
+  padding-left: 0px;
+  width: 100%;
 `
 
 export default function Contact() {
@@ -87,32 +122,23 @@ export default function Contact() {
       <Heading>Contact</Heading>
       <br />
       <FormContainer>
-        <form
+        <Form
           name="contact"
           method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
           <input type="hidden" name="bot-field" />
-          <Label>
-            Name:
-            <br />
-            <Input type="text" name="name" placeholder="Name..." />
-          </Label>
-          <br />
-          <Label>
-            Email:
-            <br />
-            <Input type="email" name="email" placeholder="Email..." />
-          </Label>
-          <br />
-          <Label>
-            Message:
-            <br />
-            <TextArea name="message" placeholder="Message..."></TextArea>
-          </Label>
-          <Submit>Send</Submit>
-        </form>
+          {/* <FontAwesomeIcon icon={faUser} size="2x" /> */}
+          <Input type="text" name="name" placeholder="Name..." />
+          {/* <br /> */}
+          <Input type="email" name="email" placeholder="Email..." />
+          {/* <br /> */}
+          <TextArea name="message" placeholder="Message..."></TextArea>
+          <Submit>
+            <FontAwesomeIcon icon={faPaperPlane} /> Send
+          </Submit>
+        </Form>
       </FormContainer>
     </Container>
   )

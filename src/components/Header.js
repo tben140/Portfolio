@@ -16,7 +16,7 @@ const Headertag = styled.header`
 
 const SiteTitle = styled.h1`
   font-size: 2rem;
-  font-weight: 900;
+  /* font-weight: 900; */
   line-height: 1.2em;
   color: white;
   text-shadow: 2px 2px 5px #000;

@@ -7,15 +7,33 @@ import Heading from "./Heading.js"
 const Container = styled.div`
   background-color: #eb4d47;
   color: #1a1b26;
-  max-width: 340px;
+  /* width: 340px; */
+  flex: 1 1 340px;
   margin-right: 5px;
   padding-left: 10px;
   padding-right: 20px;
   order: 4;
+  @media (min-width: 1145px) {
+    flex: 1 1 1145px;
+    /* margin-right: 0px; */
+    margin-bottom: 5px;
+  }
+  @media (max-width: 1189px) {
+    width: 784px;
+    /* margin-right: 0px; */
+    margin-bottom: 5px;
+  }
+  @media (max-width: 440px) {
+    width: 440px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+    font-size: 1.4em;
+  }
 `
 
 const Subheading = styled.h4`
-  font-style: italic;
+  /* font-style: italic; */
+  color: white;
   width: 95%;
   margin: 0 auto;
   margin: 5px;
@@ -24,11 +42,16 @@ const Subheading = styled.h4`
 const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 `
-const FlexItem = styled.div``
+const FlexItem = styled.div`
+  /* flex-grow: 1; */
+`
 
 const List = styled.ul`
-  margin: 10px;
+  margin: 5px;
+  line-height: 1.2em;
+  /* flex-basis: auto; */
 `
 
 export default function Skills() {
@@ -44,6 +67,7 @@ export default function Skills() {
             <li>CSS</li>
             <li>JavaScript</li>
             <li>React.js</li>
+            <li>Gatsby</li>
           </List>
           <br />
         </FlexItem>
@@ -62,6 +86,7 @@ export default function Skills() {
           <List>
             <li>React Native</li>
           </List>
+          <br />
         </FlexItem>
         <FlexItem>
           <Subheading>Testing</Subheading>
@@ -70,6 +95,7 @@ export default function Skills() {
             <li>Mocha</li>
             <li>Chai</li>
           </List>
+          <br />
         </FlexItem>
         <FlexItem>
           <Subheading>Databases</Subheading>
@@ -77,6 +103,7 @@ export default function Skills() {
             <li>PostgreSQL</li>
             <li>MongoDB</li>
           </List>
+          <br />
         </FlexItem>
         <FlexItem>
           <Subheading>CMS/eCommerce</Subheading>
@@ -89,9 +116,10 @@ export default function Skills() {
             <li>eBay Seller Hub</li>
             <li>Etsy</li>
           </List>
+          {/* <br /> */}
         </FlexItem>
       </FlexContainer>
-      <br />
+      {/* <br /> */}
     </Container>
   )
 }
