@@ -15,18 +15,16 @@ import Heading from "./Heading.js"
 const Container = styled.div`
   background-color: #3b6ea3;
   color: #1a1b26;
-  /* flex: 1 1 340px; */
   flex: 1 1 auto;
   order: 5;
   @media (max-width: 440px) {
-    /* width: 440px; */
     margin-right: 0px;
   }
 `
 
 const Subheading = styled.h4`
-  /* font-size: 1.2em; */
   color: white;
+  text-align: center;
 `
 
 const Description = styled.p`
@@ -36,37 +34,29 @@ const Description = styled.p`
   margin: 0 auto;
 `
 
-const Link = styled.a`
-  color: #000;
-`
-
 const ImgContainerLaptop = styled.div`
   width: 100%;
   float: left;
   margin-right: 10px;
-  /* flex-grow: 1; */
 `
 
 const ImgContainerPhone = styled.div`
   width: 100%;
-  float: right;
+  order: 2;
   margin-right: 10px;
-  /* flex-grow: 1; */
 `
 
 const FlexContainer = styled.div`
   display: flex;
-  @media (max-width: 500px) {
-    flex-direction: column;
+  flex-direction: column;
+  @media (min-width: 500px) {
+    flex-direction: row;
   }
 `
 
-const FlexItem = styled.div`
-  /* flex-grow: 3; */
-`
+const FlexItem = styled.div``
 
 const Button = styled.button`
-  /* type: "submit"; */
   font-size: 1.2em;
   width: 99%;
   background-color: #eb4d47;
@@ -77,6 +67,7 @@ const Button = styled.button`
   border-radius: 4px;
   cursor: pointer;
   box-sizing: border-box;
+  transition-duration: 0.4s;
   &:hover {
     background-color: #5cacff;
   }
@@ -87,27 +78,8 @@ const Button = styled.button`
 
 const Form = styled.form`
   display: inline-block;
+  width: 100%;
 `
-
-// const Input = styled.input`
-//   /* type: "submit"; */
-//   font-family: FontAwesome;
-//   width: 99%;
-//   background-color: #eb4d47;
-//   color: white;
-//   padding: 14px 20px;
-//   margin: 8px 0;
-//   border: none;
-//   border-radius: 4px;
-//   cursor: pointer;
-//   box-sizing: border-box;
-//   &:hover {
-//     background-color: #5cacff;
-//   }
-//   @media (max-width: 440px) {
-//     font-size: 1.4em;
-//   }
-// `
 
 export default function Projects() {
   const data = useStaticQuery(graphql`
@@ -153,11 +125,8 @@ export default function Projects() {
             <br />
             <Subheading>Frontend:</Subheading>
             <Form action="https://bt-fe-nc-news.netlify.com" target="_blank">
-              {/* <Input type="submit" value="Frontend" /> */}
               <Button>
-                {/* <p> */}
                 <FontAwesomeIcon icon={faWindowMaximize} size="1x" /> Frontend
-                {/* </p> */}
               </Button>
             </Form>
             <Form
@@ -165,9 +134,7 @@ export default function Projects() {
               target="_blank"
             >
               <Button>
-                {/* <p> */}
                 <FontAwesomeIcon icon={faGithub} size="1x" /> Github
-                {/* </p> */}
               </Button>
             </Form>
             <br />

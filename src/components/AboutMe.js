@@ -7,19 +7,11 @@ import Heading from "./Heading.js"
 const Container = styled.div`
   background-color: #b499c6;
   color: #1a1b26;
-  max-width: 340px;
-  /* flex: 1 1 340px; */
   margin-bottom: 5px;
-  margin-right: 5px;
   padding-left: 20px;
   padding-right: 20px;
   order: 1;
   flex-grow: 1;
-  @media (max-width: 440px) {
-    max-width: 440px;
-    margin-right: 0px;
-    margin-left: 0px;
-  }
 `
 
 const Description = styled.p`
@@ -32,6 +24,9 @@ const Description = styled.p`
     width: 100%;
     padding-left: 0px;
     font-size: 1.2em;
+  }
+  @media (min-width: 213px) {
+    font-size: 1em;
   }
 `
 

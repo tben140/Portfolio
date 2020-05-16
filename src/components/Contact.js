@@ -2,8 +2,6 @@ import React from "react"
 
 import styled from "styled-components"
 
-import FiraCode from "../assets/fonts/FiraCode-VariableFont_wght.ttf"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons"
 
@@ -19,7 +17,9 @@ const Container = styled.div`
   padding-right: 20px;
   order: 2;
   /* width: 509px; */
-  flex: 1 1 340px;
+  flex: 100% 0 340px;
+  /* flex: 1; */
+  /* flex: 100%; */
   @media (max-width: 1139px) {
     margin-right: 0px;
   }
@@ -32,14 +32,6 @@ const Container = styled.div`
 const FormContainer = styled.div`
   width: 95%;
   margin: 0 auto;
-`
-
-const Label = styled.label`
-  @font-face {
-    font-family: FiraCode;
-    src: url(${FiraCode}) format("truetype");
-  }
-  font-family: FiraCode;
 `
 
 const Input = styled.input`
@@ -102,6 +94,7 @@ const Submit = styled.button`
   border-radius: 4px;
   cursor: pointer;
   box-sizing: border-box;
+  transition-duration: 0.4s;
   &:hover {
     background-color: #5cacff;
   }

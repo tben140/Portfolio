@@ -9,9 +9,9 @@ const Container = styled.div`
   color: #1a1b26;
   /* width: 340px; */
   flex: 1 1 340px;
-  margin-right: 5px;
-  padding-left: 10px;
-  padding-right: 20px;
+  /* margin-right: 5px; */
+  /* padding-left: 10px; */
+  /* padding-right: 20px; */
   order: 4;
   @media (min-width: 1145px) {
     flex: 1 1 1145px;
@@ -27,12 +27,16 @@ const Container = styled.div`
     width: 440px;
     margin-right: 0px;
     margin-bottom: 5px;
-    font-size: 1.4em;
+    /* font-size: 1.4em; */
+  }
+  @media (min-width: 468px) {
+    /* flex: 1 1 1145px; */
+    margin-left: 5px;
+    /* margin-bottom: 5px; */
   }
 `
 
 const Subheading = styled.h4`
-  /* font-style: italic; */
   color: white;
   width: 95%;
   margin: 0 auto;
@@ -43,15 +47,24 @@ const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  @media (max-width: 440px) {
+    flex-direction: column;
+    padding-left: 20px;
+  }
+  @media (min-width: 300px) {
+    flex-direction: row;
+    justify-content: center;
+  }
 `
 const FlexItem = styled.div`
-  /* flex-grow: 1; */
+  @media (min-width: 300px) {
+    min-width: 130px;
+  }
 `
 
 const List = styled.ul`
   margin: 5px;
   line-height: 1.2em;
-  /* flex-basis: auto; */
 `
 
 export default function Skills() {
@@ -112,14 +125,12 @@ export default function Skills() {
             <li>Woocommerce</li>
             <li>Magento</li>
             <li>Shopify</li>
-            <li>Amazon Seller Central</li>
-            <li>eBay Seller Hub</li>
+            <li>Amazon</li>
+            <li>eBay</li>
             <li>Etsy</li>
           </List>
-          {/* <br /> */}
         </FlexItem>
       </FlexContainer>
-      {/* <br /> */}
     </Container>
   )
 }

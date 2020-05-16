@@ -9,6 +9,7 @@ const Heading = styled.h3`
   }
   font-family: FiraCode;
   font-size: 1.6em;
+  line-height: 1.1em;
   display: block;
   margin: 0 auto;
   padding-top: 10px;
