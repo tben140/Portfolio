@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 import FiraCode from "../assets/fonts/FiraCode-VariableFont_wght.ttf"
 
-const Heading = styled.h3`
+const Heading = styled.h2`
   @font-face {
     font-family: FiraCode;
     src: url(${FiraCode}) format("truetype");
@@ -11,7 +11,7 @@ const Heading = styled.h3`
   font-size: 1.6em;
   line-height: 1.1em;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 10px auto;
   padding-top: 10px;
   text-align: center;
 `

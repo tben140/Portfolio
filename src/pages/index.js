@@ -1,4 +1,6 @@
 import React from "react"
+import { createGlobalStyle } from "styled-components"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,9 +10,6 @@ import Projects from "../components/Projects"
 import Skills from "../components/Skills"
 import SocialMedia from "../components/SocialMedia"
 import Contact from "../components/Contact"
-
-import { createGlobalStyle } from "styled-components"
-import styled from "styled-components"
 
 import FiraCode from "../assets/fonts/FiraCode-VariableFont_wght.ttf"
 
@@ -31,6 +30,7 @@ const GlobalStyle = createGlobalStyle`
   ::-webkit-scrollbar-thumb:hover {
     background: #3b6ea3;
   }
+
   body {
     @font-face {
     font-family: FiraCode;
@@ -43,15 +43,13 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     overflow: overlay
   }
-  
 `
 
-const FlexContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-`
+// const FlexContainer = styled.div`
+//   display: flex;
+//   flex-flow: row wrap;
+//   justify-content: flex-start;
+// `
 
 const IndexPage = () => (
   <>
@@ -59,13 +57,13 @@ const IndexPage = () => (
     <Layout>
       <SEO title="Home" />
       <Header />
-      <FlexContainer>
-        <AboutMe />
-        <Contact />
-        <SocialMedia />
-        <Skills />
-        <Projects />
-      </FlexContainer>
+      {/* <FlexContainer> */}
+      <AboutMe />
+      <Contact />
+      <SocialMedia />
+      <Skills />
+      <Projects />
+      {/* </FlexContainer> */}
     </Layout>
   </>
 )

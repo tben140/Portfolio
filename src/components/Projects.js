@@ -1,10 +1,7 @@
 import React from "react"
-
-import { useStaticQuery, graphql } from "gatsby"
-
-import Img from "gatsby-image"
-
 import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faWindowMaximize, faServer } from "@fortawesome/free-solid-svg-icons"
@@ -13,18 +10,10 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import Heading from "./Heading.js"
 
 const Container = styled.div`
+  order: 5;
   background-color: #3b6ea3;
   color: #1a1b26;
-  flex: 1 1 auto;
-  order: 5;
-  @media (max-width: 440px) {
-    margin-right: 0px;
-  }
-`
-
-const Subheading = styled.h4`
-  color: white;
-  text-align: center;
+  padding: 0px 10px;
 `
 
 const Description = styled.p`
@@ -34,51 +23,73 @@ const Description = styled.p`
   margin: 0 auto;
 `
 
+const Subheading = styled.h3`
+  color: #fff;
+  text-align: center;
+  margin: 0px 0px 10px 0px;
+`
+
 const ImgContainerLaptop = styled.div`
   width: 100%;
-  float: left;
-  margin-right: 10px;
+  margin: 0px 0px 10px 0px;
+  @media (min-width: 800px) {
+    margin: 0px 20px 10px 0px;
+  }
 `
 
 const ImgContainerPhone = styled.div`
-  width: 100%;
-  order: 2;
-  margin-right: 10px;
+  width: 50%;
+  margin: 0px auto 10px auto;
+  @media (min-width: 800px) {
+    order: 2;
+    margin: 0px 0px 10px 20px;
+  }
 `
 
 const FlexContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  @media (min-width: 500px) {
-    flex-direction: row;
+  flex-flow: column wrap;
+  @media (min-width: 800px) {
+    flex-flow: row;
   }
 `
 
-const FlexItem = styled.div``
+const FlexItem = styled.div`
+  width: 100%;
+`
 
-const Button = styled.button`
-  font-size: 1.2em;
-  width: 99%;
-  background-color: #eb4d47;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  box-sizing: border-box;
-  transition-duration: 0.4s;
-  &:hover {
-    background-color: #5cacff;
-  }
-  @media (max-width: 440px) {
-    font-size: 1.4em;
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-flow: column;
+  @media (min-width: 400px) {
+    flex-flow: row;
   }
 `
 
 const Form = styled.form`
-  display: inline-block;
   width: 100%;
+  @media (min-width: 400px) {
+    width: 100%;
+    margin: 0 5px;
+  }
+`
+
+const Button = styled.button`
+  font-size: 1.2em;
+  width: 100%;
+  background-color: #eb4d47;
+  color: #fff;
+  padding: 14px 20px;
+  border: 0px;
+  border-radius: 4px;
+  margin: 5px 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.4s, color 0.4s;
+  &:hover {
+    background-color: #5cacff;
+    color: #000;
+  }
 `
 
 export default function Projects() {
@@ -104,16 +115,13 @@ export default function Projects() {
   return (
     <Container>
       <Heading>Projects</Heading>
-      <br />
       <Description>
         <Subheading>
           Northcoders Full Stack Project: Northcoders News
         </Subheading>
-        <br />
         <FlexContainer>
           <ImgContainerLaptop>
             <Img fluid={data.laptopimage.childImageSharp.fluid} />
-            <br />
           </ImgContainerLaptop>
           <FlexItem>
             Full-stack Reddit style aggregation board. Articles can be voted on
@@ -124,38 +132,44 @@ export default function Projects() {
             <br />
             <br />
             <Subheading>Frontend:</Subheading>
-            <Form action="https://bt-fe-nc-news.netlify.com" target="_blank">
-              <Button>
-                <FontAwesomeIcon icon={faWindowMaximize} size="1x" /> Frontend
-              </Button>
-            </Form>
-            <Form
-              action="https://github.com/tben140/fe-nc-news"
-              target="_blank"
-            >
-              <Button>
-                <FontAwesomeIcon icon={faGithub} size="1x" /> Github
-              </Button>
-            </Form>
-            <br />
-            <Subheading>Backend:</Subheading>
-            <Form action="https://bt-nc-news.herokuapp.com/api" target="_blank">
-              <Button>
-                <p>
-                  <FontAwesomeIcon icon={faServer} size="1x" /> Backend API
-                </p>
-              </Button>
-            </Form>
-            <Form
-              action="https://github.com/tben140/be-nc-news"
-              target="_blank"
-            >
-              <Button>
-                <p>
+            <ButtonContainer>
+              <Form action="https://bt-fe-nc-news.netlify.com" target="_blank">
+                <Button>
+                  <FontAwesomeIcon icon={faWindowMaximize} size="1x" /> Frontend
+                </Button>
+              </Form>
+              <Form
+                action="https://github.com/tben140/fe-nc-news"
+                target="_blank"
+              >
+                <Button>
                   <FontAwesomeIcon icon={faGithub} size="1x" /> Github
-                </p>
-              </Button>
-            </Form>
+                </Button>
+              </Form>
+            </ButtonContainer>
+            <Subheading>Backend:</Subheading>
+            <ButtonContainer>
+              <Form
+                action="https://bt-nc-news.herokuapp.com/api"
+                target="_blank"
+              >
+                <Button>
+                  <p>
+                    <FontAwesomeIcon icon={faServer} size="1x" /> Backend
+                  </p>
+                </Button>
+              </Form>
+              <Form
+                action="https://github.com/tben140/be-nc-news"
+                target="_blank"
+              >
+                <Button>
+                  <p>
+                    <FontAwesomeIcon icon={faGithub} size="1x" /> Github
+                  </p>
+                </Button>
+              </Form>
+            </ButtonContainer>
             <br />
             <br />
           </FlexItem>
@@ -163,11 +177,9 @@ export default function Projects() {
       </Description>
       <Description>
         <Subheading>Northcoders Final Project: Mobile Running App</Subheading>
-        <br />
         <FlexContainer>
           <ImgContainerPhone>
             <Img fluid={data.phoneimage.childImageSharp.fluid} />
-            <br />
           </ImgContainerPhone>
           <FlexItem>
             React Native mobile application which creates a running route on a
@@ -176,16 +188,55 @@ export default function Projects() {
             MongoDB Atlas. This project was developed as part of a team.
             <br />
             <br />
+            <Subheading>Frontend:</Subheading>
+            <ButtonContainer>
+              <Form action="https://bt-fe-nc-news.netlify.com" target="_blank">
+                <Button>
+                  <FontAwesomeIcon icon={faWindowMaximize} size="1x" /> Frontend
+                </Button>
+              </Form>
+              <Form
+                action="https://github.com/tben140/fe-nc-news"
+                target="_blank"
+              >
+                <Button>
+                  <FontAwesomeIcon icon={faGithub} size="1x" /> Github
+                </Button>
+              </Form>
+            </ButtonContainer>
+            <Subheading>Backend:</Subheading>
+            <ButtonContainer>
+              <Form
+                action="https://bt-nc-news.herokuapp.com/api"
+                target="_blank"
+              >
+                <Button>
+                  <p>
+                    <FontAwesomeIcon icon={faServer} size="1x" /> Backend
+                  </p>
+                </Button>
+              </Form>
+              <Form
+                action="https://github.com/tben140/be-nc-news"
+                target="_blank"
+              >
+                <Button>
+                  <p>
+                    <FontAwesomeIcon icon={faGithub} size="1x" /> Github
+                  </p>
+                </Button>
+              </Form>
+            </ButtonContainer>
+            <br />
+            <br />
           </FlexItem>
         </FlexContainer>
       </Description>
       <Description>
         <Subheading>Portfolio</Subheading>
-        <br />
         <FlexContainer>
           <ImgContainerLaptop>
             <Img fluid={data.laptopimage.childImageSharp.fluid} />
-            <br />
           </ImgContainerLaptop>
           <FlexItem>
             This site was created using Gatsby and Styled Components. Please
@@ -202,7 +253,6 @@ export default function Projects() {
           </FlexItem>
         </FlexContainer>
       </Description>
-      <br />
     </Container>
   )
 }

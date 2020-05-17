@@ -5,130 +5,89 @@ import styled from "styled-components"
 import Heading from "./Heading.js"
 
 const Container = styled.div`
+  order: 4;
   background-color: #eb4d47;
   color: #1a1b26;
-  /* width: 340px; */
-  flex: 1 1 340px;
-  /* margin-right: 5px; */
-  /* padding-left: 10px; */
-  /* padding-right: 20px; */
-  order: 4;
-  @media (min-width: 1145px) {
-    flex: 1 1 1145px;
-    /* margin-right: 0px; */
-    margin-bottom: 5px;
-  }
-  @media (max-width: 1189px) {
-    width: 784px;
-    /* margin-right: 0px; */
-    margin-bottom: 5px;
-  }
-  @media (max-width: 440px) {
-    width: 440px;
-    margin-right: 0px;
-    margin-bottom: 5px;
-    /* font-size: 1.4em; */
-  }
-  @media (min-width: 468px) {
-    /* flex: 1 1 1145px; */
-    margin-left: 5px;
-    /* margin-bottom: 5px; */
-  }
-`
-
-const Subheading = styled.h4`
-  color: white;
-  width: 95%;
-  margin: 0 auto;
-  margin: 5px;
+  padding: 0px 10px;
+  margin: 0px 0px 5px 0px;
 `
 
 const FlexContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  @media (max-width: 440px) {
-    flex-direction: column;
-    padding-left: 20px;
-  }
-  @media (min-width: 300px) {
-    flex-direction: row;
-    justify-content: center;
-  }
-`
-const FlexItem = styled.div`
-  @media (min-width: 300px) {
-    min-width: 130px;
-  }
+  flex-flow: row wrap;
+  justify-content: center;
 `
 
-const List = styled.ul`
-  margin: 5px;
+const FlexItem = styled.div`
+  flex: 135px 0;
+`
+
+const Subheading = styled.h3`
+  color: #fff;
+`
+const ListContainer = styled.ul`
+  margin: 0px 0px 10px 0px;
   line-height: 1.2em;
 `
+
+const ListItem = styled.li``
 
 export default function Skills() {
   return (
     <Container>
       <Heading>Skills</Heading>
-      <br />
       <FlexContainer>
         <FlexItem>
           <Subheading>Frontend</Subheading>
-          <List>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>React.js</li>
-            <li>Gatsby</li>
-          </List>
-          <br />
+          <ListContainer>
+            <ListItem>HTML</ListItem>
+            <ListItem>CSS</ListItem>
+            <ListItem>JavaScript</ListItem>
+            <ListItem>React.js</ListItem>
+            <ListItem>Gatsby</ListItem>
+          </ListContainer>
         </FlexItem>
         <FlexItem>
           <Subheading>Backend</Subheading>
-          <List>
-            <li>Node.js</li>
-            <li>Express</li>
-            <li>Axios</li>
-            <li>Knex.js</li>
-          </List>
-          <br />
+          <ListContainer>
+            <ListItem>Node.js</ListItem>
+            <ListItem>Express</ListItem>
+            <ListItem>Axios</ListItem>
+            <ListItem>Knex.js</ListItem>
+          </ListContainer>
         </FlexItem>
         <FlexItem>
           <Subheading>Mobile</Subheading>
-          <List>
-            <li>React Native</li>
-          </List>
-          <br />
+          <ListContainer>
+            <ListItem>React Native</ListItem>
+          </ListContainer>
         </FlexItem>
         <FlexItem>
           <Subheading>Testing</Subheading>
-          <List>
-            <li>Jest</li>
-            <li>Mocha</li>
-            <li>Chai</li>
-          </List>
-          <br />
+          <ListContainer>
+            <ListItem>Jest</ListItem>
+            <ListItem>Mocha</ListItem>
+            <ListItem>Chai</ListItem>
+          </ListContainer>
         </FlexItem>
         <FlexItem>
           <Subheading>Databases</Subheading>
-          <List>
-            <li>PostgreSQL</li>
-            <li>MongoDB</li>
-          </List>
-          <br />
+          <ListContainer>
+            <ListItem>PostgreSQL</ListItem>
+            <ListItem>MongoDB</ListItem>
+          </ListContainer>
         </FlexItem>
         <FlexItem>
           <Subheading>CMS/eCommerce</Subheading>
-          <List>
-            <li>Wordpress</li>
-            <li>Woocommerce</li>
-            <li>Magento</li>
-            <li>Shopify</li>
-            <li>Amazon</li>
-            <li>eBay</li>
-            <li>Etsy</li>
-          </List>
+          <ListContainer>
+            <ListItem>Wordpress</ListItem>
+            <ListItem>Woocommerce</ListItem>
+            <ListItem>Magento</ListItem>
+            <ListItem>Shopify</ListItem>
+            <ListItem>Amazon</ListItem>
+            <ListItem>eBay</ListItem>
+            <ListItem>Etsy</ListItem>
+          </ListContainer>
         </FlexItem>
       </FlexContainer>
     </Container>
