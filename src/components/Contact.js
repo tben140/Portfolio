@@ -7,11 +7,16 @@ import { faPaperPlane } from "@fortawesome/free-solid-svg-icons"
 import Heading from "./Heading.js"
 
 const Container = styled.div`
+  flex: 100%;
   order: 2;
   background-color: #ef9323;
   color: #1a1b26;
   padding: 0px 10px;
   margin: 0px 0px 5px 0px;
+  @media (min-width: 800px) {
+    flex: 1 0px;
+    margin: 0px 5px 5px 0px;
+  }
 `
 
 const FormContainer = styled.div`

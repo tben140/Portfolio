@@ -10,6 +10,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import Heading from "./Heading.js"
 
 const Container = styled.div`
+  flex: 100%;
   order: 5;
   background-color: #3b6ea3;
   color: #1a1b26;
@@ -95,7 +96,14 @@ const Button = styled.button`
 export default function Projects() {
   const data = useStaticQuery(graphql`
     query {
-      laptopimage: file(relativePath: { eq: "laptop.png" }) {
+      ncnewslaptopimage: file(relativePath: { eq: "ncnews-laptop.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1600) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      portfoliolaptopimage: file(relativePath: { eq: "portfolio-laptop.png" }) {
         childImageSharp {
           fluid(maxWidth: 1600) {
             ...GatsbyImageSharpFluid
@@ -121,7 +129,7 @@ export default function Projects() {
         </Subheading>
         <FlexContainer>
           <ImgContainerLaptop>
-            <Img fluid={data.laptopimage.childImageSharp.fluid} />
+            <Img fluid={data.ncnewslaptopimage.childImageSharp.fluid} />
           </ImgContainerLaptop>
           <FlexItem>
             Full-stack Reddit style aggregation board. Articles can be voted on
@@ -236,7 +244,7 @@ export default function Projects() {
         <Subheading>Portfolio</Subheading>
         <FlexContainer>
           <ImgContainerLaptop>
-            <Img fluid={data.laptopimage.childImageSharp.fluid} />
+            <Img fluid={data.portfoliolaptopimage.childImageSharp.fluid} />
           </ImgContainerLaptop>
           <FlexItem>
             This site was created using Gatsby and Styled Components. Please

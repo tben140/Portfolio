@@ -45,11 +45,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-// const FlexContainer = styled.div`
-//   display: flex;
-//   flex-flow: row wrap;
-//   justify-content: flex-start;
-// `
+const FlexContainer = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  /* justify-content: flex-start; */
+`
 
 const IndexPage = () => (
   <>
@@ -57,13 +57,13 @@ const IndexPage = () => (
     <Layout>
       <SEO title="Home" />
       <Header />
-      {/* <FlexContainer> */}
-      <AboutMe />
-      <Contact />
-      <SocialMedia />
-      <Skills />
-      <Projects />
-      {/* </FlexContainer> */}
+      <FlexContainer>
+        <AboutMe />
+        <Contact />
+        <SocialMedia />
+        <Skills />
+        <Projects />
+      </FlexContainer>
     </Layout>
   </>
 )

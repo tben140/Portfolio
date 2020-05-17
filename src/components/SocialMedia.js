@@ -9,11 +9,16 @@ import { EnvelopeSquare } from "@styled-icons/fa-solid/EnvelopeSquare"
 import Heading from "./Heading.js"
 
 const Container = styled.div`
+  flex: 100%;
   order: 3;
   background-color: #5ba9d7;
   color: #1a1b26;
   padding: 0px 10px;
   margin: 0px 0px 5px 0px;
+  @media (min-width: 800px) {
+    flex: initial;
+    /* width: 300px; */
+  }
 `
 
 const FlexContainer = styled.div`
@@ -23,6 +28,9 @@ const FlexContainer = styled.div`
   @media (min-width: 250px) {
     flex-flow: row wrap;
     justify-content: space-around;
+  }
+  @media (min-width: 800px) {
+    flex-flow: column wrap;
   }
 `
 

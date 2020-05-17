@@ -5,11 +5,15 @@ import styled from "styled-components"
 import Heading from "./Heading.js"
 
 const Container = styled.div`
+  flex: 100%;
   order: 4;
   background-color: #eb4d47;
   color: #1a1b26;
   padding: 0px 10px;
   margin: 0px 0px 5px 0px;
+  /* @media (min-width: 800px) {
+    flex: 50%;
+  } */
 `
 
 const FlexContainer = styled.div`

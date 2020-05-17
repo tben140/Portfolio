@@ -4,10 +4,16 @@ import styled from "styled-components"
 import Heading from "./Heading.js"
 
 const Container = styled.div`
+  flex: 100%;
+  order: 1;
   background-color: #b499c6;
   color: #1a1b26;
   padding: 0px 10px;
   margin: 0px 0px 5px;
+  @media (min-width: 1000px) {
+    flex: 0 0 275px;
+    margin: 0px 5px 5px 0px;
+  }
 `
 
 const Description = styled.p`
