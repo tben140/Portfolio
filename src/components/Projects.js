@@ -34,15 +34,17 @@ const ImgContainerLaptop = styled.div`
   width: 100%;
   margin: 0px 0px 10px 0px;
   @media (min-width: 800px) {
+    width: 50%;
     margin: 0px 20px 10px 0px;
   }
 `
 
 const ImgContainerPhone = styled.div`
-  width: 50%;
+  width: 75%;
   margin: 0px auto 10px auto;
   @media (min-width: 800px) {
     order: 2;
+    width: 25%;
     margin: 0px 0px 10px 20px;
   }
 `
@@ -117,6 +119,13 @@ export default function Projects() {
           }
         }
       }
+      appphoneimage: file(relativePath: { eq: "app-phone.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1600) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -124,19 +133,19 @@ export default function Projects() {
     <Container>
       <Heading>Projects</Heading>
       <Description>
-        <Subheading>
-          Northcoders Full Stack Project: Northcoders News
-        </Subheading>
         <FlexContainer>
           <ImgContainerLaptop>
             <Img fluid={data.ncnewslaptopimage.childImageSharp.fluid} />
           </ImgContainerLaptop>
           <FlexItem>
-            Full-stack Reddit style aggregation board. Articles can be voted on
-            and discussed, with the user also able to vote on comments. RESTful
-            API built with Node.js, Express.js and PostgreSQL. And a frontend
-            built with React.js and CSS. Testing carried out with Mocha and
-            Chai.
+            <Subheading>
+              Northcoders Full Stack Project: Northcoders News
+            </Subheading>
+            This project is a full stack Reddit style aggregation board. The
+            articles can be voted on and comments can be added, with the user
+            also able to vote on other users comments and delete their own
+            comments. The REST API is built with Node.js, Express and
+            PostgreSQL. The frontend is built with React.js and CSS.
             <br />
             <br />
             <Subheading>Frontend:</Subheading>
@@ -184,13 +193,15 @@ export default function Projects() {
         </FlexContainer>
       </Description>
       <Description>
-        <Subheading>Northcoders Final Project: Mobile Running App</Subheading>
         <FlexContainer>
           <ImgContainerPhone>
-            <Img fluid={data.phoneimage.childImageSharp.fluid} />
+            <Img fluid={data.appphoneimage.childImageSharp.fluid} />
           </ImgContainerPhone>
           <FlexItem>
-            React Native mobile application which creates a running route on a
+            <Subheading>
+              Northcoders Final Project: Mobile Running App
+            </Subheading>
+            This React Native mobile application creates a running route on a
             map which avoids areas of high air pollution. The Node.js backend is
             hosted on the Google Cloud Platform and the database is hosted on
             MongoDB Atlas. This project was developed as part of a team.
@@ -198,13 +209,13 @@ export default function Projects() {
             <br />
             <Subheading>Frontend:</Subheading>
             <ButtonContainer>
-              <Form action="https://bt-fe-nc-news.netlify.com" target="_blank">
+              {/* <Form action="https://bt-fe-nc-news.netlify.com" target="_blank">
                 <Button>
                   <FontAwesomeIcon icon={faWindowMaximize} size="1x" /> Frontend
                 </Button>
-              </Form>
+              </Form> */}
               <Form
-                action="https://github.com/tben140/fe-nc-news"
+                action="https://github.com/tben140/fe-nc-running-app"
                 target="_blank"
               >
                 <Button>
@@ -215,7 +226,7 @@ export default function Projects() {
             <Subheading>Backend:</Subheading>
             <ButtonContainer>
               <Form
-                action="https://bt-nc-news.herokuapp.com/api"
+                action="https://spheric-mesh-269023.nw.r.appspot.com/api"
                 target="_blank"
               >
                 <Button>
@@ -225,7 +236,7 @@ export default function Projects() {
                 </Button>
               </Form>
               <Form
-                action="https://github.com/tben140/be-nc-news"
+                action="https://github.com/tben140/be-nc-running-app"
                 target="_blank"
               >
                 <Button>
@@ -241,12 +252,12 @@ export default function Projects() {
         </FlexContainer>
       </Description>
       <Description>
-        <Subheading>Portfolio</Subheading>
         <FlexContainer>
           <ImgContainerLaptop>
             <Img fluid={data.portfoliolaptopimage.childImageSharp.fluid} />
           </ImgContainerLaptop>
           <FlexItem>
+            <Subheading>Portfolio</Subheading>
             This site was created using Gatsby and Styled Components. Please
             follow the link below for the Github repository.
             <br />

@@ -31,9 +31,9 @@ export default function AboutMe() {
         customers.
         <br />
         <br />
-        Much of my work experience has been within ecommerce. I have had a
-        longstanding interest in technology and also have academic experience
-        within science and mathematics.
+        Much of my work experience has been within the eCommerce industry and am
+        experienced with multi-channel sales across various eCommerce platforms
+        and marketplaces.
         <br />
         <br />
       </Description>

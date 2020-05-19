@@ -67,6 +67,14 @@ export default function Skills() {
           </ListContainer>
         </FlexItem>
         <FlexItem>
+          <Subheading>Hosting</Subheading>
+          <ListContainer>
+            <ListItem>Heroku</ListItem>
+            <ListItem>Netlify</ListItem>
+            <ListItem>Google Cloud</ListItem>
+          </ListContainer>
+        </FlexItem>
+        <FlexItem>
           <Subheading>Testing</Subheading>
           <ListContainer>
             <ListItem>Jest</ListItem>
