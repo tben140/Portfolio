@@ -112,13 +112,6 @@ export default function Projects() {
           }
         }
       }
-      phoneimage: file(relativePath: { eq: "phone.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1600) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
       appphoneimage: file(relativePath: { eq: "app-phone.png" }) {
         childImageSharp {
           fluid(maxWidth: 1600) {
@@ -156,7 +149,7 @@ export default function Projects() {
                 </Button>
               </Form>
               <Form
-                action="https://github.com/tben140/fe-nc-news"
+                action="https://github.com/tben140/Northcoders-News-Frontend"
                 target="_blank"
               >
                 <Button>
@@ -177,7 +170,7 @@ export default function Projects() {
                 </Button>
               </Form>
               <Form
-                action="https://github.com/tben140/be-nc-news"
+                action="https://github.com/tben140/Northcoders-News-Backend"
                 target="_blank"
               >
                 <Button>
@@ -215,7 +208,7 @@ export default function Projects() {
                 </Button>
               </Form> */}
               <Form
-                action="https://github.com/tben140/fe-nc-running-app"
+                action="https://github.com/tben140/Running-App-Frontend"
                 target="_blank"
               >
                 <Button>
@@ -236,7 +229,7 @@ export default function Projects() {
                 </Button>
               </Form>
               <Form
-                action="https://github.com/tben140/be-nc-running-app"
+                action="https://github.com/tben140/Running-App-Backend"
                 target="_blank"
               >
                 <Button>
