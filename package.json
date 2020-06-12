@@ -29,7 +29,9 @@
     "typeface-passion-one": "0.0.72"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "jshint": "^2.11.1",
+    "prettier": "^1.19.1",
+    "typescript": "^3.9.5"
   },
   "keywords": [
     "gatsby"

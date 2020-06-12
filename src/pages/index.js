@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: #b499c6; 
+    background: #b499c6;
     border-radius: 5px;
   }
   ::-webkit-scrollbar-thumb:hover {

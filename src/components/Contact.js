@@ -6,6 +6,8 @@ import { faPaperPlane } from "@fortawesome/free-solid-svg-icons"
 
 import Heading from "./Heading.js"
 
+// import FiraCode from "../assets/fonts/FiraCode-VariableFont_wght.ttf"
+
 const Container = styled.div`
   flex: 100%;
   order: 2;
@@ -29,11 +31,12 @@ const Form = styled.form`
 `
 
 const Input = styled.input`
+  font-family: FiraCode;
   font-size: 1.2em;
   width: 100%;
   background-color: #1a1b26;
   color: #fff;
-  padding: 10px 0px;
+  padding: 10px 10px;
   border: 0px;
   border-radius: 5px;
   margin: 0px 0px 10px 0px;
@@ -43,15 +46,22 @@ const Input = styled.input`
     background-color: white;
     color: black;
   }
+  &::-webkit-input-placeholder {
+    font-family: FiraCode;
+  }
+  &::-moz-placeholder {
+    font-family: FiraCode;
+  }
 `
 
 const TextArea = styled.textarea`
+  font-family: FiraCode;
   font-size: 1.2em;
   width: 100%;
   height: 100px;
   background-color: #1a1b26;
   color: #fff;
-  padding: 10px 0px;
+  padding: 10px 10px;
   border: 0px;
   border-radius: 5px;
   margin: 0px 0px 10px 0px;
@@ -61,6 +71,12 @@ const TextArea = styled.textarea`
   &:focus {
     background-color: white;
     color: black;
+  }
+  &::-webkit-input-placeholder {
+    font-family: FiraCode;
+  }
+  &::-moz-placeholder {
+    font-family: FiraCode;
   }
 `
 

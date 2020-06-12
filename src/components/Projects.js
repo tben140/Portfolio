@@ -35,7 +35,7 @@ const ImgContainerLaptop = styled.div`
   margin: 0px 0px 10px 0px;
   @media (min-width: 800px) {
     width: 50%;
-    margin: 0px 20px 10px 0px;
+    margin: 25px 20px 10px 0px;
   }
 `
 
@@ -45,7 +45,7 @@ const ImgContainerPhone = styled.div`
   @media (min-width: 800px) {
     order: 2;
     width: 25%;
-    margin: 0px 0px 10px 20px;
+    margin: 25px 0px 10px 20px;
   }
 `
 
@@ -196,8 +196,9 @@ export default function Projects() {
             </Subheading>
             This React Native mobile application creates a running route on a
             map which avoids areas of high air pollution. The Node.js backend is
-            hosted on the Google Cloud Platform and the database is hosted on
-            MongoDB Atlas. This project was developed as part of a team.
+            hosted on Horoku, deployed from a Docker container, and the database
+            is hosted on MongoDB Atlas. This project was developed as part of a
+            team.
             <br />
             <br />
             <Subheading>Frontend:</Subheading>
@@ -219,7 +220,7 @@ export default function Projects() {
             <Subheading>Backend:</Subheading>
             <ButtonContainer>
               <Form
-                action="https://spheric-mesh-269023.nw.r.appspot.com/api"
+                action="https://running-app-backend.herokuapp.com/api"
                 target="_blank"
               >
                 <Button>
